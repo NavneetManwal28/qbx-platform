@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Globe, Zap, Award, Layers, CheckCircle2 } from 'lucide-react';
 
 const services = [
@@ -354,13 +355,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-100 py-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl font-bold text-qbx-navy">QBX</div>
-          <p className="text-sm text-qbx-muted">&copy; {new Date().getFullYear()} QBX Marketing Agency. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

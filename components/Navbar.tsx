@@ -47,6 +47,12 @@ export default function Navbar() {
             <Link href="/#services" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
               Services
             </Link>
+            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
+              About Us
+            </Link>
+            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
+              Contact Us
+            </Link>
 
             {user && role === 'partner' && (
               <Link
@@ -100,6 +106,12 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 space-y-2">
           <Link href="/#services" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
             Services
+          </Link>
+          <Link href="/about" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
+            About Us
+          </Link>
+          <Link href="/contact" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
+            Contact Us
           </Link>
           {user && role === 'partner' && (
             <Link href="/dashboard" onClick={() => setOpen(false)} className="flex items-center gap-2 py-2 text-sm font-medium text-qbx-blue">
