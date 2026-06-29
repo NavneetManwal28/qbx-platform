@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
+// Update this to the real inbox where enquiries should land.
 const CONTACT_EMAIL = 'hello@qbx.in';
 
 export default function ContactPage() {
@@ -66,7 +67,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="tel:+918888999910"
+              href="tel:+910000000000"
               className="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 hover:border-qbx-sky/30 hover:shadow-lg hover:shadow-qbx-sky/5 transition-all"
             >
               <div className="w-11 h-11 rounded-xl bg-qbx-blue/10 flex items-center justify-center text-qbx-blue flex-shrink-0">
@@ -74,7 +75,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-display font-semibold">Phone</div>
-                <div className="text-sm text-gray-500 mt-0.5">+91 88889 99910</div>
+                <div className="text-sm text-gray-500 mt-0.5">+91 00000 00000</div>
               </div>
             </a>
 
@@ -84,7 +85,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-display font-semibold">Office</div>
-                <div className="text-sm text-gray-500 mt-0.5">Gurgaon, India</div>
+                <div className="text-sm text-gray-500 mt-0.5">India</div>
               </div>
             </div>
           </div>

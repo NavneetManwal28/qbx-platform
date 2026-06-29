@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { Menu, X, LogOut, Upload, ShieldCheck } from 'lucide-react';
@@ -38,8 +39,15 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-display text-2xl font-bold tracking-tight text-qbx-navy">
-            QBX
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-light.png"
+              alt="QBX Service"
+              width={140}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop */}

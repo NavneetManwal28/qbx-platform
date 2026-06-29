@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Globe, Zap, Award, Layers, CheckCircle2 } from 'lucide-react';
@@ -88,7 +89,43 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Creative */}
+          {/* Mobile Hero Banner — visible only on small screens */}
+          <div className="block lg:hidden mt-8">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+              <Image
+                src="/logo-light.png"
+                alt="QBX Service — Marketing that moves markets"
+                width={800}
+                height={400}
+                className="w-full object-contain bg-gradient-to-br from-slate-50 to-blue-50 p-8"
+                priority
+              />
+              {/* Overlay stats bar */}
+              <div className="absolute bottom-0 left-0 right-0 bg-qbx-navy/90 backdrop-blur-sm px-4 py-3 flex justify-around">
+                <div className="text-center">
+                  <div className="font-display text-lg font-bold text-white">150+</div>
+                  <div className="text-[10px] text-blue-200">Campaigns</div>
+                </div>
+                <div className="w-px bg-white/20" />
+                <div className="text-center">
+                  <div className="font-display text-lg font-bold text-white">40+</div>
+                  <div className="text-[10px] text-blue-200">Partners</div>
+                </div>
+                <div className="w-px bg-white/20" />
+                <div className="text-center">
+                  <div className="font-display text-lg font-bold text-qbx-gold">98%</div>
+                  <div className="text-[10px] text-blue-200">Retention</div>
+                </div>
+                <div className="w-px bg-white/20" />
+                <div className="text-center">
+                  <div className="font-display text-lg font-bold text-white">12</div>
+                  <div className="text-[10px] text-blue-200">Territories</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Hero Creative — hidden on mobile */}
           <div className="hidden lg:block relative">
             <div className="relative w-full max-w-md ml-auto" style={{ height: 480 }}>
               
@@ -287,7 +324,6 @@ export default function Home() {
           </div>
 
           <div className="mt-12 relative">
-            {/* Background creative */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
               <svg width="500" height="500" viewBox="0 0 500 500" fill="none" className="opacity-[0.04]">
                 <circle cx="250" cy="250" r="200" stroke="#1E4D8C" strokeWidth="1.5" />
@@ -308,36 +344,37 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10">
-            <div className="space-y-5">
-              {[
-                'Performance marketing with a data-driven approach',
-                'In-depth brand & creative strategy for best outcomes',
-                'Organic traffic growth',
-                'Tech to scale and automate',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-qbx-light/80 border border-gray-100">
-                  <div className="w-2 h-2 rounded-full bg-qbx-blue flex-shrink-0" />
-                  <span className="text-sm font-medium text-qbx-navy">{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="space-y-5">
-              {[
-                'Premier Google Partner and Meta Business Partner',
-                'Pan-India growth partner network',
-                '300+ member team of experts',
-                'Curate hyper-scale strategies for your brand',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-qbx-light/80 border border-gray-100">
-                  <div className="w-2 h-2 rounded-full bg-qbx-gold flex-shrink-0" />
-                  <span className="text-sm font-medium text-qbx-navy">{item}</span>
-                </div>
-              ))}
-            </div>
+              <div className="space-y-5">
+                {[
+                  'Performance marketing with a data-driven approach',
+                  'In-depth brand & creative strategy for best outcomes',
+                  'Organic traffic growth',
+                  'Tech to scale and automate',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-qbx-light/80 border border-gray-100">
+                    <div className="w-2 h-2 rounded-full bg-qbx-blue flex-shrink-0" />
+                    <span className="text-sm font-medium text-qbx-navy">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="space-y-5">
+                {[
+                  'Premier Google Partner and Meta Business Partner',
+                  'Pan-India growth partner network',
+                  '300+ member team of experts',
+                  'Curate hyper-scale strategies for your brand',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-qbx-light/80 border border-gray-100">
+                    <div className="w-2 h-2 rounded-full bg-qbx-gold flex-shrink-0" />
+                    <span className="text-sm font-medium text-qbx-navy">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-qbx-navy rounded-3xl p-10 sm:p-14 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
