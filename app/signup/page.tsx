@@ -64,7 +64,9 @@ export default function SignupPage() {
         company: form.company,
         phone: form.phone,
         territory: form.territory,
-        role: 'partner',
+      
+      role: 'partner',
+platform: 'qbx',
       });
 
       if (profileError) throw profileError;
