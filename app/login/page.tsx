@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 
@@ -28,9 +29,7 @@ export default function LoginPage() {
         password,
       });
 
-      if (authError) {
-        throw new Error('Invalid username or password');
-      }
+      if (authError) throw new Error('Invalid username or password');
 
       const { data: profile } = await supabase
         .from('profiles')
@@ -48,8 +47,15 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-qbx-light flex flex-col items-center justify-center px-4 py-12">
-      <Link href="/" className="font-display text-3xl font-bold text-qbx-navy mb-8">
-        QBX
+      <Link href="/" className="mb-8">
+        <Image
+          src="/logo-light.png"
+          alt="QBX Service"
+          width={160}
+          height={46}
+          className="h-12 w-auto object-contain mix-blend-multiply"
+          priority
+        />
       </Link>
 
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
@@ -104,7 +110,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href="/signup" className="text-qbx-blue font-medium hover:underline">
             Sign up
           </Link>

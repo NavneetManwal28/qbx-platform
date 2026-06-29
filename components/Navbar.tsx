@@ -43,84 +43,54 @@ export default function Navbar() {
             <Image
               src="/logo-light.png"
               alt="QBX Service"
-              width={140}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={180}
+              height={52}
+              className="h-14 w-auto object-contain mix-blend-multiply"
               priority
             />
           </Link>
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/#services" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
-              Services
-            </Link>
-            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
-              About Us
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
-              Contact Us
-            </Link>
+            <Link href="/#services" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">Services</Link>
+            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">About Us</Link>
+            <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">Contact Us</Link>
 
             {user && role === 'partner' && (
-              <Link
-                href="/dashboard"
-                className="flex items-center gap-1.5 text-sm font-medium text-qbx-blue hover:text-qbx-navy transition-colors"
-              >
+              <Link href="/dashboard" className="flex items-center gap-1.5 text-sm font-medium text-qbx-blue hover:text-qbx-navy transition-colors">
                 <Upload size={15} /> Upload Photos
               </Link>
             )}
-
             {user && role === 'admin' && (
-              <Link
-                href="/admin"
-                className="flex items-center gap-1.5 text-sm font-medium text-qbx-blue hover:text-qbx-navy transition-colors"
-              >
+              <Link href="/admin" className="flex items-center gap-1.5 text-sm font-medium text-qbx-blue hover:text-qbx-navy transition-colors">
                 <ShieldCheck size={15} /> Admin Panel
               </Link>
             )}
-
             {user ? (
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-red-600 transition-colors"
-              >
+              <button onClick={handleLogout} className="flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-red-600 transition-colors">
                 <LogOut size={15} /> Sign out
               </button>
             ) : (
               <>
-                <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">
-                  Log in
-                </Link>
-                <Link
-                  href="/signup"
-                  className="text-sm font-medium bg-qbx-navy text-white px-5 py-2 rounded-lg hover:bg-qbx-blue transition-colors"
-                >
+                <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-qbx-navy transition-colors">Log in</Link>
+                <Link href="/signup" className="text-sm font-medium bg-qbx-navy text-white px-5 py-2 rounded-lg hover:bg-qbx-blue transition-colors">
                   Become a Partner
                 </Link>
               </>
             )}
           </div>
 
-          {/* Mobile toggle */}
           <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-qbx-navy">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 space-y-2">
-          <Link href="/#services" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
-            Services
-          </Link>
-          <Link href="/about" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
-            About Us
-          </Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
-            Contact Us
-          </Link>
+          <Link href="/#services" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">Services</Link>
+          <Link href="/about" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">About Us</Link>
+          <Link href="/contact" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">Contact Us</Link>
           {user && role === 'partner' && (
             <Link href="/dashboard" onClick={() => setOpen(false)} className="flex items-center gap-2 py-2 text-sm font-medium text-qbx-blue">
               <Upload size={15} /> Upload Photos
@@ -137,12 +107,8 @@ export default function Navbar() {
             </button>
           ) : (
             <>
-              <Link href="/login" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">
-                Log in
-              </Link>
-              <Link href="/signup" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-qbx-navy">
-                Become a Partner
-              </Link>
+              <Link href="/login" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-gray-600">Log in</Link>
+              <Link href="/signup" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-qbx-navy">Become a Partner</Link>
             </>
           )}
         </div>
